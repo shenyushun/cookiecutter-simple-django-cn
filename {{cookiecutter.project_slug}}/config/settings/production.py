@@ -6,6 +6,7 @@ from __future__ import absolute_import, unicode_literals
 from django.utils import six
 from .common import *  # noqa
 
+# env.read_env('env.example')
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
