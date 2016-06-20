@@ -1,5 +1,7 @@
 # cookiecutter-simple-django-cn
 
+[![Build Status](https://travis-ci.org/shenyushun/cookiecutter-simple-django-cn.svg?branch=master)](https://travis-ci.org/shenyushun/cookiecutter-simple-django-cn)
+
 a simple django templates for chinese,this project is imitative of
 [cookiecutter-django](https://github.com/pydanny/cookiecutter-django)
 and just reserve a few requisite packages.
