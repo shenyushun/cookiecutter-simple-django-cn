@@ -17,6 +17,7 @@ ROOT_DIR = environ.Path(__file__) - 3
 APPS_DIR = ROOT_DIR.path('{{ cookiecutter.project_slug }}')
 
 env = environ.Env()
+#env.read_env('env.example')
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
