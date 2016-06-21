@@ -3,7 +3,6 @@
 Production Configurations
 """
 from __future__ import absolute_import, unicode_literals
-from django.utils import six
 from .common import *  # noqa
 
 # env.read_env('env.example')
@@ -58,11 +57,14 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # EMAIL
 # ------------------------------------------------------------------------------
-# DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
-#                          default='{{cookiecutter.project_name}} <noreply@{{cookiecutter.domain_name}}>')
-# EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[{{cookiecutter.project_name}}] ')
-# SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
-# EMAIL_BACKEND = "anymail.backends.mailgun.MailgunBackend"
+DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
+                         default='{{cookiecutter.project_name}} <noreply@{{cookiecutter.domain_name}}>')
+EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[{{cookiecutter.project_name}}] ')
+SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
+EMAIL_BACKEND = env('EMAIL_BACKEND', default='')
+EMAIL_HOST = env('EMAIL_HOST', default='127.0.0.1')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='django.core.mail.backends.console.EmailBackend')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
