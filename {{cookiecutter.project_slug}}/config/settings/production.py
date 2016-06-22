@@ -58,10 +58,12 @@ DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
                          default='{{cookiecutter.project_name}} <noreply@{{cookiecutter.domain_name}}>')
 EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[{{cookiecutter.project_name}}] ')
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
-EMAIL_BACKEND = env('EMAIL_BACKEND', default='')
-EMAIL_HOST = env('EMAIL_HOST', default='127.0.0.1')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='django.core.mail.backends.console.EmailBackend')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
+
+EMAIL_BACKEND = env.email()['EMAIL_BACKEND']
+EMAIL_HOST = env.email()['EMAIL_HOST']
+EMAIL_HOST_USER = env.email()['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD =env.email()['EMAIL_HOST_PASSWORD']
+
 
 # TEMPLATE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -81,13 +83,10 @@ DATABASES['default'] = env.db('DATABASE_URL')
 
 
 # CACHING
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': (env('CACHE_MEMCACHED_SERVERS',default='127.0.0.1'),)
-        'TIMEOUT': env('CACHE_MEMCACHED_TIMEOUT',default=300),
-    }
-}
+CACHES={}
+CACHES['default'] = env.cache('CACHE_URL')
+#CACHES['default']['TIMEOUT'] = 60 * 60 *24
+#CACHES['default']['OPTIONS'] = {'MAX_ENTRIES': 10000}
 
 
 # LOGGING CONFIGURATION
