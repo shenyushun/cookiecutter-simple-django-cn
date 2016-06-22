@@ -47,9 +47,6 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=[
                          '{{cookiecutter.domain_name}}'])
 
 
-INSTALLED_APPS += ('gunicorn', )
-
-
 # Static Assets
 # ------------------------
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
