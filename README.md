@@ -4,7 +4,7 @@
 
 a simple django templates for chinese,this project is imitative of
 [cookiecutter-django](https://github.com/pydanny/cookiecutter-django)
-and just reserve a few requisite packages.
+and to localize.
 
 一个精简的中文版django项目模板，参照了[cookiecutter-django](https://github.com/pydanny/cookiecutter-django)仅仅保留一些必须的包。
 
