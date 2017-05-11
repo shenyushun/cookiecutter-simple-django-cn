@@ -1,3 +1,7 @@
+# 2017-05-11
+由于cookiecutter更新导致本项目会报错，目前工作较忙无法及时更新，建议各位使用[cookiecutter-django](https://github.com/pydanny/cookiecutter-django)。
+
+
 # cookiecutter-simple-django-cn
 
 [![Build Status](https://travis-ci.org/shenyushun/cookiecutter-simple-django-cn.svg?branch=master)](https://travis-ci.org/shenyushun/cookiecutter-simple-django-cn)
